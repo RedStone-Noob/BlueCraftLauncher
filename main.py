@@ -1,10 +1,13 @@
-import threading
 import window
+import sys
+from PySide6.QtWidgets import QApplication
 
-WindowThread = threading.Thread(target=window.Window().mainloop())
+
 if __name__ == "__main__":
-    WindowThread.start()
-
+    app = QApplication(sys.argv)
+    window = window.MainWindow()
+    window.show()
+    sys.exit(app.exec())
 """
 《天净沙·坤思》
 元•马致远
